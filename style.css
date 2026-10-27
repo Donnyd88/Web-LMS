@@ -1,0 +1,58 @@
+body {
+  font-family: sans-serif;
+  margin: 16px;
+}
+
+h1 { 
+  font-size: 24px; 
+}
+
+h2 { 
+  font-size: 18px; 
+}
+
+.layout {
+  display: flex;
+  gap: 16px;
+}
+
+.sidebar {
+  width: 20%;
+  padding: 8px;
+}
+
+.main {
+  width: 80%;
+  padding: 16px;
+}
+
+.sidebar a {
+  display: block;
+  margin: 4px 0;
+}
+
+.tabs button {
+  margin-right: 4px;
+}
+
+.tabs button.active {
+  font-weight: bold;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 4px 8px;
+  text-align: left;
+}
+
+hr { 
+  margin: 8px 0; 
+}
+
+#error { 
+  color: #b00020; 
+}
