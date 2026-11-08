@@ -4,8 +4,22 @@
     <meta charset="UTF-8">
     <title>Mock Canvas</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
+  <body class="bg-white m-0 p-0 font-sans text-gray-900 flex min-h-screen">
+    
+   <div class="sticky top-0 h-screen w-32 bg-gray-800 p-2 gap-2 z-50 flex flex-col flex-shrink-0">
+        <div class="text-white font-bold text-lg mb-2 px-2">Canvas</div>
+        
+        <div class="w-full gap-2 grid grid-cols-1">
+            <button onclick="alert('Account')" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-800 py-1 px-2 rounded">Account</button>
+            <a href="/" class="block text-center w-full bg-gray-200 hover:bg-gray-300 text-gray-800 py-1 px-2 rounded">Courses</a>
+            <button onclick="alert('Grades')" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-800 py-1 px-2 rounded">Grades</button>
+            <a href="materials.html" class="block text-center w-full bg-gray-200 hover:bg-gray-300 text-gray-800 py-1 px-2 rounded">Materials</a>
+        </div>
+    </div>
+
+    <div class="flex-1 p-6 flex flex-col">
     <div id="error"></div>
     <div class="layout">
       <div class="sidebar">
@@ -20,5 +34,6 @@
       </div>
     </div>
     <script src="script.js"></script>
+    </div>
   </body>
 </html>

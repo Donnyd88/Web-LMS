@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Materials</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="materials_styles.css">
+</head>
+<body class="bg-white m-0 p-0 font-sans text-gray-900 flex min-h-screen">
+    
+    <!-- Sidebar  -->
+   <div class="sticky top-0 h-screen w-32 bg-gray-800 p-2 gap-2 z-50 flex flex-col flex-shrink-0">
+        <div class="text-white font-bold text-lg mb-2 px-2">Canvas</div>
+        
+        <div class="w-full gap-2 grid grid-cols-1">
+            <button onclick="alert('Account')" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-800 py-1 px-2 rounded">Account</button>
+            <a href="index.html" class="block text-center w-full bg-gray-200 hover:bg-gray-300 text-gray-800 py-1 px-2 rounded">Courses</a>
+            <button onclick="alert('Grades')" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-800 py-1 px-2 rounded">Grades</button>
+            <a href="materials.html" class="block text-center w-full bg-gray-200 hover:bg-gray-300 text-gray-800 py-1 px-2 rounded">Materials</a>
+        </div>
+    </div>
+
+    <div class="flex-1 p-6 flex flex-col">
+        <h1 class="text-2xl font-bold mb-4">Course Materials</h1>
+        
+        <!-- Tempplate container for class materials-->
+        <div id="materials-container" class="flex flex-col w-full">
+            <div class="text-gray-500">Loading materials...</div>
+        </div>
+    </div>
+
+    <!-- Template -->
+    <template id="book-template">
+        <div class="min-w-[400px] border rounded-lg p-4 bg-gray-50 flex flex-row">
+            
+            <!-- Left Column -->
+            <div class="w-32 flex flex-col items-center gap-2">
+                <img class="book-cover w-full h-48 rounded shadow-sm object-cover" alt="Book Cover">
+                <div class="button-container w-full"></div>
+            </div>
+            
+            <!-- Right Column with Book Info -->
+            <div class="flex-1 flex flex-col pl-4 gap-1">
+                <div class="book-title text-lg font-bold leading-tight"></div>
+                <div class="book-author text-gray-700"></div>
+                <div class="book-edition text-gray-700 text-sm"></div>
+                <div class="book-isbn text-gray-700 text-sm"></div>
+                <div class="badge-container mt-2 flex"></div>
+            </div>
+
+        </div>
+    </template>
+    
+    <script src="materials_script.js"></script>
+</body>
+</html>
