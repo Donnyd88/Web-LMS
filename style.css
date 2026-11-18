@@ -56,3 +56,13 @@ hr {
 #error { 
   color: #b00020; 
 }
+
+.theme-buttons {
+  display: flex
+}
+
+.theme-buttons button {
+  aspect-ratio: 1 / 1;
+  width: 20px;
+  margin: 5px;
+}
