@@ -3,55 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Materials</title>
+    <title>Course Materials - Mock Canvas</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="materials_styles.css">
 </head>
-<body class="bg-white m-0 p-0 font-sans text-gray-900 flex min-h-screen">
-    
-    <!-- Sidebar  -->
-   <div class="sticky top-0 h-screen w-32 bg-gray-800 p-2 gap-2 z-50 flex flex-col flex-shrink-0">
-        <div class="text-white font-bold text-lg mb-2 px-2">Canvas</div>
-        
-        <div class="w-full gap-2 grid grid-cols-1">
-            <button onclick="alert('Account')" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-800 py-1 px-2 rounded">Account</button>
-            <a href="index.html" class="block text-center w-full bg-gray-200 hover:bg-gray-300 text-gray-800 py-1 px-2 rounded">Courses</a>
-            <button onclick="alert('Grades')" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-800 py-1 px-2 rounded">Grades</button>
-            <a href="materials.html" class="block text-center w-full bg-gray-200 hover:bg-gray-300 text-gray-800 py-1 px-2 rounded">Materials</a>
-        </div>
-    </div>
+<body class="bg-white m-0 p-0 font-sans text-gray-900 flex flex-col md:flex-row min-h-screen">
 
-    <div class="flex-1 p-6 flex flex-col">
-        <h1 class="text-2xl font-bold mb-4">Course Materials</h1>
-        
-        <!-- Tempplate container for class materials-->
-        <div id="materials-container" class="flex flex-col w-full">
-            <div class="text-gray-500">Loading materials...</div>
-        </div>
-    </div>
+    <!-- Skip Link for Keyboard & Screen Reader Users -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-blue-700 focus:text-white focus:px-4 focus:py-2 focus:rounded focus:font-bold">
+        Skip to main content
+    </a>
 
-    <!-- Template -->
+    <!-- Navigation Sidebar (Reflows to top bar at 200% zoom / narrow viewports) -->
+    <nav aria-label="Primary Navigation" class="sticky top-0 w-full md:h-screen md:w-36 bg-gray-900 p-3 gap-2 z-40 flex flex-row md:flex-col flex-wrap items-center md:items-stretch flex-shrink-0">
+        <div class="text-white font-bold text-lg md:mb-2 px-2">Canvas</div>
+
+        <ul class="flex flex-row md:flex-col gap-2 w-auto md:w-full list-none m-0 p-0">
+            <li>
+                <a href="index.html" class="w-full flex items-center justify-center md:justify-start gap-2 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-900 font-medium py-1.5 px-3 rounded">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 200" fill="currentColor" aria-hidden="true" focusable="false" class="w-5 h-4 flex-shrink-0">
+                        <path d="M273.09,180.75H197.47V164.47h62.62A122.16,122.16,0,1,0,17.85,142a124,124,0,0,0,2,22.51H90.18v16.29H6.89l-1.5-6.22A138.51,138.51,0,0,1,1.57,142C1.57,65.64,63.67,3.53,140,3.53S278.43,65.64,278.43,142a137.67,137.67,0,0,1-3.84,32.57ZM66.49,87.63,50.24,71.38,61.75,59.86,78,76.12Zm147,0L202,76.12l16.25-16.25,11.51,11.51ZM131.85,53.82v-23h16.29v23Zm15.63,142.3a31.71,31.71,0,0,1-28-16.81c-6.4-12.08-15.73-72.29-17.54-84.25a8.15,8.15,0,0,1,13.58-7.2c8.88,8.21,53.48,49.72,59.88,61.81a31.61,31.61,0,0,1-27.9,46.45ZM121.81,116.2c4.17,24.56,9.23,50.21,12,55.49A15.35,15.35,0,1,0,161,157.3C158.18,152,139.79,133.44,121.81,116.2Z"></path>
+                    </svg>
+                    <span>Courses</span>
+                </a>
+            </li>
+            <li>
+                <a href="materials.html" aria-current="page" class="w-full flex items-center justify-center md:justify-start gap-2 bg-blue-700 text-white font-bold border-l-4 border-white focus:outline-none focus:ring-2 focus:ring-blue-300 py-1.5 px-3 rounded">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" class="w-5 h-5 flex-shrink-0">
+                        <path d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                    </svg>
+                    <span>Materials</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="main-content" class="flex-1 p-6 flex flex-col min-w-0">
+        <div class="mb-6">
+            <h1 class="text-3xl font-bold text-gray-900">Course Materials</h1>
+            <p class="text-gray-700 text-sm mt-1">Review required and optional textbooks by course shelf, check off owned copies, or open external bookstore listings.</p>
+        </div>
+
+        <section aria-label="Filter and search materials" class="mb-6 p-4 bg-gray-100 border border-gray-300 rounded-lg flex flex-wrap items-end gap-4">
+            <div class="flex-1 min-w-[220px]">
+                <label for="material-search" class="block text-sm font-bold text-gray-900 mb-1">Search Books</label>
+                <input id="material-search" type="search" placeholder='Hint: Try "Kurose" or "9780135928790"'
+                       class="w-full px-3 py-1.5 bg-white border border-gray-400 rounded text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-700">
+            </div>
+
+            <div class="min-w-[180px]">
+                <label for="course-filter" class="block text-sm font-bold text-gray-900 mb-1">Course Shelf</label>
+                <select id="course-filter" class="w-full px-3 py-1.5 bg-white border border-gray-400 rounded text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-700">
+                    <option value="all">All Courses</option>
+                </select>
+            </div>
+
+            <div class="flex items-center gap-4 pb-1.5">
+                <label class="inline-flex items-center gap-2 cursor-pointer text-sm font-semibold text-gray-900">
+                    <input id="required-only-toggle" type="checkbox" class="w-4 h-4 accent-blue-700 focus:ring-2 focus:ring-blue-700">
+                    <span>Required only</span>
+                </label>
+
+                <label class="inline-flex items-center gap-2 cursor-pointer text-sm font-semibold text-gray-900">
+                    <input id="unpurchased-only-toggle" type="checkbox" class="w-4 h-4 accent-blue-700 focus:ring-2 focus:ring-blue-700">
+                    <span>Unpurchased only</span>
+                </label>
+            </div>
+        </section>
+
+        <!-- Live region announces loading completion, filter results, errors -->
+        <div id="materials-container" aria-live="polite" class="flex flex-col w-full">
+            <p class="text-gray-700 font-medium">Loading materials...</p>
+        </div>
+    </main>
+
+    <!-- Undo Banner -->
+    <div id="toast-region" aria-live="assertive" class="fixed bottom-4 right-4 z-50"></div>
+
+    <!-- Book Card Template -->
     <template id="book-template">
-        <div class="min-w-[400px] border rounded-lg p-4 bg-gray-50 flex flex-row">
-            
-            <!-- Left Column -->
-            <div class="w-32 flex flex-col items-center gap-2">
-                <img class="book-cover w-full h-48 rounded shadow-sm object-cover" alt="Book Cover">
+        <article class="book-card w-full sm:w-[410px] max-w-full border border-gray-300 rounded-lg p-4 bg-gray-50 hover:shadow-md transition-shadow flex flex-col sm:flex-row gap-4">
+
+            <div class="w-32 flex flex-col items-center gap-2 flex-shrink-0">
+                <img class="book-cover w-full h-48 rounded shadow-sm object-cover border border-gray-300" alt="">
                 <div class="button-container w-full"></div>
-            </div>
-            
-            <!-- Right Column with Book Info -->
-            <div class="flex-1 flex flex-col pl-4 gap-1">
-                <div class="book-title text-lg font-bold leading-tight"></div>
-                <div class="book-author text-gray-700"></div>
-                <div class="book-edition text-gray-700 text-sm"></div>
-                <div class="book-isbn text-gray-700 text-sm"></div>
-                <div class="badge-container mt-2 flex"></div>
+                <span class="store-hint text-[11px] text-gray-700 text-center leading-tight"></span>
             </div>
 
-        </div>
+            <div class="flex-1 flex flex-col justify-between gap-2 min-w-0">
+                <div class="flex flex-col gap-1">
+                    <h3 class="book-title text-lg font-bold text-gray-900 leading-tight"></h3>
+                    <p class="book-author text-gray-800 text-sm"></p>
+                    <p class="book-edition text-gray-800 text-sm"></p>
+                    <p class="book-isbn text-gray-800 text-sm"></p>
+                </div>
+
+                <div class="flex flex-col gap-2 pt-2 border-t border-gray-200">
+                    <div class="badge-container flex flex-wrap items-center gap-2"></div>
+
+                    <label class="purchased-label inline-flex items-center gap-2 px-2.5 py-1.5 rounded border border-gray-300 bg-white hover:bg-gray-100 cursor-pointer text-sm font-semibold text-gray-900 w-max focus-within:ring-2 focus-within:ring-blue-700">
+                        <input type="checkbox" class="purchased-checkbox w-4 h-4 accent-green-700">
+                        <span class="purchased-text">Mark as Purchased</span>
+                    </label>
+                </div>
+            </div>
+
+        </article>
     </template>
-    
+
     <script src="materials_script.js"></script>
 </body>
 </html>
