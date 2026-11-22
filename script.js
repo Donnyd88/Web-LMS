@@ -194,6 +194,46 @@ async function renderGrades(panel) {
   panel.appendChild(table);
 }
 
+function bindThemeButton(id, lightcolor, darkcolor) {
+  const button = document.getElementById(id);
+  if (button) {
+    button.addEventListener("click", () => changeTheme(lightcolor, darkcolor));
+  }
+}
+
+bindThemeButton("red-theme-button", "lightcoral", "maroon");
+bindThemeButton("yellow-theme-button", "lightyellow", "goldenrod");
+bindThemeButton("green-theme-button", "palegreen", "darkgreen");
+bindThemeButton("blue-theme-button", "lightblue", "darkblue");
+bindThemeButton("pink-theme-button", "lightpink", "darkmagenta");
+bindThemeButton("white-theme-button", "white", "black");
+
+function changeTheme(lightcolor, darkcolor) {
+  localStorage.setItem("theme", JSON.stringify({ lightcolor, darkcolor }));
+  applyTheme(lightcolor, darkcolor);
+}
+
+function applyTheme(lightcolor, darkcolor) {
+  const lightElements = document.querySelectorAll('.colorDynamicBackground')
+  const darkElements = document.querySelectorAll('.colorDynamicText')
+  lightElements.forEach(element => {
+    element.style.backgroundColor = lightcolor
+  })
+  darkElements.forEach(element => {
+    element.style.color = darkcolor
+  })
+}
+
+function restoreTheme() {
+  const savedTheme = localStorage.getItem("theme");
+  if (!savedTheme) return;
+
+  const { lightcolor, darkcolor } = JSON.parse(savedTheme);
+  applyTheme(lightcolor, darkcolor);
+}
+
+restoreTheme();
+
 async function init() {
   await renderSidebar();
   await renderMain();
