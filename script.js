@@ -23,6 +23,32 @@ function el(tag, text) {
   return node;
 }
 
+function openFilePicker(btn) {
+  const input = document.createElement('input');
+  input.type = 'file';
+
+  input.addEventListener('change', async () => {
+    const file = input.files[0];
+    if (!file) return;
+
+    try {
+      btn.before(file.name + " ");
+      btn.before(document.createElement("br"));
+      btn.textContent = "(submitted)";
+      btn.className = 'w-32 bg-gray-200 hover:bg-gray-300 text-gray-800 py-1 px-2 rounded';
+
+      const contents = await file.text();
+
+      console.log('File successfully opened and read!');
+      console.log('File content:', contents);
+    } catch (error) {
+      console.error('Failed to open/read file:', error);
+    }
+  });
+
+  input.click();
+}
+
 async function renderSidebar() {
   const container = document.getElementById("course-list");
   const courses = await apiGet("/courses");
@@ -57,6 +83,22 @@ async function renderMain() {
   header.replaceChildren();
   header.appendChild(el("h1", `${course.code || ""} - ${course.name || ""}`));
   header.appendChild(el("h1", `${course.instructor || ""} | ${course.term || ""}`));
+
+  const btn = document.getElementById('notifButton');
+
+  btn.addEventListener('click', () => {
+    if (btn.classList.contains('bg-green-400')) {
+      btn.classList.toggle('bg-green-400');
+      btn.classList.toggle('hover:bg-green-500');
+      btn.classList.toggle('bg-red-400');
+      btn.classList.toggle('hover:bg-red-500');
+    } else if (btn.classList.contains('bg-red-400')) {
+      btn.classList.toggle('bg-red-400');
+      btn.classList.toggle('hover:bg-red-500');
+      btn.classList.toggle('bg-green-400');
+      btn.classList.toggle('hover:bg-green-500');
+    }
+  });
 
   renderTabs();
   renderPanel();
@@ -98,8 +140,21 @@ async function renderAssignments(panel) {
 
   for (const a of assignments) {
     let label = `${a.title} - due ${a.due.slice(0, 10)} - ${a.points} pts`;
-    if (a.submitted) label += " (submitted)";
     panel.appendChild(el("div", label));
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    if (a.submitted) {
+      btn.textContent = "(submitted)";
+      btn.className = 'w-32 bg-gray-200 hover:bg-gray-300 text-gray-800 py-1 px-2 rounded';
+    }
+    else {
+      btn.textContent = "Submit";
+      btn.className = 'w-32 bg-blue-600 hover:bg-blue-700 text-white py-1 px-2 rounded';
+    }
+    btn.onclick = () => {
+      openFilePicker(btn);
+    };
+    panel.appendChild(btn);
   }
 }
 
