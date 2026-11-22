@@ -28,6 +28,9 @@ async function renderSidebar() {
   const courses = await apiGet("/courses");
   container.replaceChildren();
 
+  const requested = Number(new URLSearchParams(location.search).get("course"));
+  if (courses.some((c) => c.id === requested)) state.courseId = requested;
+
   if (courses.length && state.courseId === null) {
     state.courseId = courses[0].id;
   }
