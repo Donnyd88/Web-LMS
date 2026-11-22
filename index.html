@@ -9,33 +9,70 @@
   </head>
   <body class="bg-white m-0 p-0 font-sans text-gray-900 flex flex-col md:flex-row min-h-screen">
 
+ 
     <!-- Skip Link for Keyboard & Screen Reader Users -->
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-blue-700 focus:text-white focus:px-4 focus:py-2 focus:rounded focus:font-bold">
-      Skip to main content
+        Skip to main content
     </a>
 
-    <!-- Navigation Sidebar (Reflows to top bar at 200% zoom / narrow viewports) -->
-    <nav aria-label="Primary Navigation" class="sticky top-0 w-full md:h-screen md:w-36 bg-gray-900 p-3 gap-2 z-40 flex flex-row md:flex-col flex-wrap items-center md:items-stretch flex-shrink-0">
-      <div class="text-white font-bold text-lg md:mb-2 px-2">Canvas</div>
+<!-- Navigation Sidebar -->
+    <nav aria-label="Primary Navigation" class="sticky top-0 w-full md:h-screen md:w-40 bg-gray-900 p-3 gap-2 z-40 flex flex-row md:flex-col flex-wrap items-center md:items-stretch flex-shrink-0">
+        <div class="text-white font-bold text-lg md:mb-2 px-2">Canvas</div>
 
-      <ul class="flex flex-row md:flex-col gap-2 w-auto md:w-full list-none m-0 p-0">
-        <li>
-          <a href="index.html" aria-current="page" class="w-full flex items-center justify-center md:justify-start gap-2 bg-blue-700 text-white font-bold border-l-4 border-white focus:outline-none focus:ring-2 focus:ring-blue-300 py-1.5 px-3 rounded">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 200" fill="currentColor" aria-hidden="true" focusable="false" class="w-5 h-4 flex-shrink-0">
-              <path d="M273.09,180.75H197.47V164.47h62.62A122.16,122.16,0,1,0,17.85,142a124,124,0,0,0,2,22.51H90.18v16.29H6.89l-1.5-6.22A138.51,138.51,0,0,1,1.57,142C1.57,65.64,63.67,3.53,140,3.53S278.43,65.64,278.43,142a137.67,137.67,0,0,1-3.84,32.57ZM66.49,87.63,50.24,71.38,61.75,59.86,78,76.12Zm147,0L202,76.12l16.25-16.25,11.51,11.51ZM131.85,53.82v-23h16.29v23Zm15.63,142.3a31.71,31.71,0,0,1-28-16.81c-6.4-12.08-15.73-72.29-17.54-84.25a8.15,8.15,0,0,1,13.58-7.2c8.88,8.21,53.48,49.72,59.88,61.81a31.61,31.61,0,0,1-27.9,46.45ZM121.81,116.2c4.17,24.56,9.23,50.21,12,55.49A15.35,15.35,0,1,0,161,157.3C158.18,152,139.79,133.44,121.81,116.2Z"></path>
-            </svg>
-            <span>Courses</span>
-          </a>
-        </li>
-        <li>
-          <a href="materials.html" class="w-full flex items-center justify-center md:justify-start gap-2 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-900 font-medium py-1.5 px-3 rounded">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" class="w-5 h-5 flex-shrink-0">
-              <path d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
-            </svg>
-            <span>Materials</span>
-          </a>
-        </li>
-      </ul>
+        <ul class="flex flex-row md:flex-col flex-wrap gap-2 w-auto md:w-full list-none m-0 p-0">
+            <!-- Home / Index -->
+            <li>
+                <a href="index.html" aria-current="page" class="w-full flex items-center justify-center md:justify-start gap-2 bg-blue-700 text-white font-bold border-l-4 border-white focus:outline-none focus:ring-2 focus:ring-blue-300 py-1.5 px-3 rounded">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="w-5 h-5 flex-shrink-0">
+                        <path d="M3 9.75L12 3l9 6.75V21a1 1 0 0 1-1 1h-5.5v-6.5h-5V22H4a1 1 0 0 1-1-1V9.75z"></path>
+                    </svg>
+                    <span>Home</span>
+                </a>
+            </li>
+
+            <!-- Dashboard -->
+            <li>
+                <a href="dashboard.html" class="w-full flex items-center justify-center md:justify-start gap-2 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-900 font-medium py-1.5 px-3 rounded">
+                    <svg viewBox="0 0 280 200" fill="currentColor" aria-hidden="true" focusable="false" class="w-5 h-4 flex-shrink-0">
+                        <path d="M273.09,180.75H197.47V164.47h62.62A122.16,122.16,0,1,0,17.85,142a124,124,0,0,0,2,22.51H90.18v16.29H6.89l-1.5-6.22A138.51,138.51,0,0,1,1.57,142C1.57,65.64,63.67,3.53,140,3.53S278.43,65.64,278.43,142a137.67,137.67,0,0,1-3.84,32.57ZM66.49,87.63,50.24,71.38,61.75,59.86,78,76.12Zm147,0L202,76.12l16.25-16.25,11.51,11.51ZM131.85,53.82v-23h16.29v23Zm15.63,142.3a31.71,31.71,0,0,1-28-16.81c-6.4-12.08-15.73-72.29-17.54-84.25a8.15,8.15,0,0,1,13.58-7.2c8.88,8.21,53.48,49.72,59.88,61.81a31.61,31.61,0,0,1-27.9,46.45ZM121.81,116.2c4.17,24.56,9.23,50.21,12,55.49A15.35,15.35,0,1,0,161,157.3C158.18,152,139.79,133.44,121.81,116.2Z"></path>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+            <!-- Courses -->
+            <li>
+                <a href="courses.html" class="w-full flex items-center justify-center md:justify-start gap-2 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-900 font-medium py-1.5 px-3 rounded">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="w-5 h-5 flex-shrink-0">
+                        <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                        <line x1="9" y1="4" x2="9" y2="20"></line>
+                    </svg>
+                    <span>Courses</span>
+                </a>
+            </li>
+
+            <!-- Materials -->
+            <li>
+                <a href="materials.html" class="w-full flex items-center justify-center md:justify-start gap-2 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-900 font-medium py-1.5 px-3 rounded">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="w-5 h-5 flex-shrink-0">
+                        <path d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"></path>
+                    </svg>
+                    <span>Materials</span>
+                </a>
+            </li>
+
+            <!-- Settings -->
+            <li>
+                <a href="settings.html" class="w-full flex items-center justify-center md:justify-start gap-2 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-900 font-medium py-1.5 px-3 rounded">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="w-5 h-5 flex-shrink-0">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l-.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.26.604.852.997 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                    </svg>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
     </nav>
 
     <main id="main-content" class="flex-1 p-6 flex flex-col min-w-0">
