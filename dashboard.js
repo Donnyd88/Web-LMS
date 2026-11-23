@@ -103,6 +103,8 @@ function buildPicker(courses, images) {
 
         if (images[course.id]) {
             const removeButton = el("button", "Remove image");
+            removeButton.className = "remove-btn";
+        
             removeButton.setAttribute("aria-label", `Remove image from ${course.code}`);
             removeButton.onclick = () => removeImage(course.id);
             row.appendChild(removeButton);

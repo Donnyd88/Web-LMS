@@ -66,3 +66,14 @@
     min-height: 44px;
     padding: 8px 16px;
 }
+
+.remove-btn {
+  background-color: #b91c1c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.remove-btn:hover {
+  background-color: #991b1b;
+}
