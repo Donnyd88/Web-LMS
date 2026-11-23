@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="dashboard.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="theme.css">
     <script>
         tailwind.config = {
             corePlugins: {
@@ -25,7 +26,7 @@
     </style>
 </head>
 
-<body class="bg-white m-0 p-0 font-sans text-gray-900 flex flex-col md:flex-row min-h-screen">
+<body class="bg-white m-0 p-0 font-sans text-gray-900 flex flex-col md:flex-row min-h-screen colorDynamicBackground colorDynamicText">
 
     <!-- Skip Link -->
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-blue-700 focus:text-white focus:px-4 focus:py-2 focus:rounded focus:font-bold">
@@ -49,7 +50,7 @@
 
             <!-- Dashboard  -->
             <li>
-                <a href="dashboard.html" aria-current="page" class="w-full flex items-center justify-center md:justify-start gap-2 bg-blue-700 text-white font-bold border-l-4 border-white focus:outline-none focus:ring-2 focus:ring-blue-300 py-1.5 px-3 rounded">
+                <a href="dashboard.html" aria-current="page" class="colorDynamicButton w-full flex items-center justify-center md:justify-start gap-2 bg-blue-700 text-white font-bold border-l-4 border-white focus:outline-none focus:ring-2 focus:ring-blue-300 py-1.5 px-3 rounded">
                     <svg  viewBox="0 0 280 200" fill="currentColor" aria-hidden="true" focusable="false" class="w-5 h-4 flex-shrink-0">
                         <path d="M273.09,180.75H197.47V164.47h62.62A122.16,122.16,0,1,0,17.85,142a124,124,0,0,0,2,22.51H90.18v16.29H6.89l-1.5-6.22A138.51,138.51,0,0,1,1.57,142C1.57,65.64,63.67,3.53,140,3.53S278.43,65.64,278.43,142a137.67,137.67,0,0,1-3.84,32.57ZM66.49,87.63,50.24,71.38,61.75,59.86,78,76.12Zm147,0L202,76.12l16.25-16.25,11.51,11.51ZM131.85,53.82v-23h16.29v23Zm15.63,142.3a31.71,31.71,0,0,1-28-16.81c-6.4-12.08-15.73-72.29-17.54-84.25a8.15,8.15,0,0,1,13.58-7.2c8.88,8.21,53.48,49.72,59.88,61.81a31.61,31.61,0,0,1-27.9,46.45ZM121.81,116.2c4.17,24.56,9.23,50.21,12,55.49A15.35,15.35,0,1,0,161,157.3C158.18,152,139.79,133.44,121.81,116.2Z"></path>
                     </svg>
@@ -92,7 +93,7 @@
         </ul>
     </nav>
 
-    <main id="main-content" class="flex-1 p-6 flex flex-col min-w-0">
+    <main id="main-content" class="flex-1 p-6 flex flex-col min-w-0 colorDynamicText">
         <div id="error" role="alert"></div>
         <a href="index.html">Back to courses</a>
         <div class="dashboard-header">
@@ -107,6 +108,7 @@
         <div id="card-grid" class="card-grid"></div>
         <input type="file" id="image-input" accept="image/*" aria-label="Upload course image" hidden>
     </main>
+    <script src="theme.js"></script>
     <script src="dashboard.js"></script>
 </body>
 

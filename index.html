@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Courses - Mock Canvas</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="theme.css">
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-white m-0 p-0 font-sans text-gray-900 flex flex-col md:flex-row min-h-screen">
+  <body class="bg-white m-0 p-0 font-sans text-gray-900 flex flex-col md:flex-row min-h-screen colorDynamicBackground colorDynamicText">
 
  
     <!-- Skip Link for Keyboard & Screen Reader Users -->
@@ -22,7 +23,7 @@
         <ul class="flex flex-row md:flex-col flex-wrap gap-2 w-auto md:w-full list-none m-0 p-0">
             <!-- Home / Index -->
             <li>
-                <a href="index.html" aria-current="page" class="w-full flex items-center justify-center md:justify-start gap-2 bg-blue-700 text-white font-bold border-l-4 border-white focus:outline-none focus:ring-2 focus:ring-blue-300 py-1.5 px-3 rounded">
+                <a href="index.html" aria-current="page" class="colorDynamicButton w-full flex items-center justify-center md:justify-start gap-2 bg-blue-700 text-white font-bold border-l-4 border-white focus:outline-none focus:ring-2 focus:ring-blue-300 py-1.5 px-3 rounded">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="w-5 h-5 flex-shrink-0">
                         <path d="M3 9.75L12 3l9 6.75V21a1 1 0 0 1-1 1h-5.5v-6.5h-5V22H4a1 1 0 0 1-1-1V9.75z"></path>
                     </svg>
@@ -89,6 +90,7 @@
         <div id="panel"></div>
       </div>
     </div>
+    <script src="theme.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

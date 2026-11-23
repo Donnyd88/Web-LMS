@@ -1,0 +1,24 @@
+html[data-theme-active="true"] .colorDynamicBackground {
+  background-color: var(--theme-background) !important;
+}
+
+html[data-theme-active="true"] body.colorDynamicText {
+  color: var(--theme-text);
+}
+
+html[data-theme-active="true"] .colorDynamicText:not(body),
+html[data-theme-active="true"] .colorDynamicText:not(body) *:not(.colorDynamicButton):not(.submitted-button):not(.info-tooltip) {
+  color: var(--theme-text) !important;
+}
+
+html[data-theme-active="true"] .colorDynamicButton {
+  background-color: var(--theme-text) !important;
+  border-color: var(--theme-buttons) !important;
+  color: var(--theme-background) !important;
+}
+
+.submitted-button {
+  background-color: #e5e7eb !important;
+  border: 1px solid #d1d5db !important;
+  color: #1f2937 !important;
+}
