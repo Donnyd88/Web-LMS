@@ -51,7 +51,7 @@ function buildCard(course, images) {
 
     const card = el("a");
     card.className = "course-card";
-    card.href = `index.html?course=${course.id}`;
+    card.href = `courses.html?course=${course.id}`;
 
     let banner;
     if (images[course.id]) {
