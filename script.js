@@ -186,6 +186,9 @@ async function renderAssignments(panel) {
 async function renderAnnouncements(panel) {
   const announcements = await apiGet(`/courses/${state.courseId}/announcements`);
 
+  panel.appendChild(document.createElement("hr"));
+  panel.appendChild(document.createElement("hr"));
+
   for (const a of announcements) {
     panel.appendChild(el("div", a.title));
     panel.appendChild(el("div", a.body));
@@ -195,6 +198,10 @@ async function renderAnnouncements(panel) {
 
 async function renderGrades(panel) {
   const grades = await apiGet(`/courses/${state.courseId}/grades`);
+
+  panel.appendChild(document.createElement("hr"));
+  panel.appendChild(document.createElement("hr"));
+  panel.appendChild(document.createElement("br"));
 
   if (!grades.length) {
     panel.appendChild(el("div", "No grades posted yet."));
