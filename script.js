@@ -109,7 +109,7 @@ async function renderMain() {
 
 function renderTabs() {
   const tabs = document.getElementById("tabs");
-  tabs.className = "tabs";
+  tabs.classList.add("tabs");
   tabs.replaceChildren();
 
   const names = [
@@ -148,11 +148,11 @@ async function renderAssignments(panel) {
     btn.type = 'button';
     if (a.submitted) {
       btn.textContent = "(submitted)";
-      btn.className = 'w-32 bg-gray-200 hover:bg-gray-300 text-gray-800 py-1 px-2 rounded';
+      btn.className = 'submitted-button w-32 bg-gray-200 hover:bg-gray-300 text-gray-800 py-1 px-2 rounded';
     }
     else {
       btn.textContent = "Submit";
-      btn.className = 'w-32 bg-blue-600 hover:bg-blue-700 text-white py-1 px-2 rounded';
+      btn.className = 'colorDynamicButton w-32 bg-blue-600 hover:bg-blue-700 text-white py-1 px-2 rounded';
     }
     btn.onclick = () => {
       openFilePicker(btn);
@@ -193,46 +193,6 @@ async function renderGrades(panel) {
   }
   panel.appendChild(table);
 }
-
-function bindThemeButton(id, lightcolor, darkcolor) {
-  const button = document.getElementById(id);
-  if (button) {
-    button.addEventListener("click", () => changeTheme(lightcolor, darkcolor));
-  }
-}
-
-bindThemeButton("red-theme-button", "lightcoral", "maroon");
-bindThemeButton("yellow-theme-button", "lightyellow", "goldenrod");
-bindThemeButton("green-theme-button", "palegreen", "darkgreen");
-bindThemeButton("blue-theme-button", "lightblue", "darkblue");
-bindThemeButton("pink-theme-button", "lightpink", "darkmagenta");
-bindThemeButton("white-theme-button", "white", "black");
-
-function changeTheme(lightcolor, darkcolor) {
-  localStorage.setItem("theme", JSON.stringify({ lightcolor, darkcolor }));
-  applyTheme(lightcolor, darkcolor);
-}
-
-function applyTheme(lightcolor, darkcolor) {
-  const lightElements = document.querySelectorAll('.colorDynamicBackground')
-  const darkElements = document.querySelectorAll('.colorDynamicText')
-  lightElements.forEach(element => {
-    element.style.backgroundColor = lightcolor
-  })
-  darkElements.forEach(element => {
-    element.style.color = darkcolor
-  })
-}
-
-function restoreTheme() {
-  const savedTheme = localStorage.getItem("theme");
-  if (!savedTheme) return;
-
-  const { lightcolor, darkcolor } = JSON.parse(savedTheme);
-  applyTheme(lightcolor, darkcolor);
-}
-
-restoreTheme();
 
 async function init() {
   await renderSidebar();
