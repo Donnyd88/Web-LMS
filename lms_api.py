@@ -24,6 +24,7 @@ from datetime import datetime, timedelta
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
 
 app = FastAPI(title="Mock LMS API")
 
@@ -364,6 +365,27 @@ def get_announcements(course_id: int):
 def get_grades(course_id: int):
     _get_course_or_404(course_id)
     return GRADES.get(course_id, [])
+
+class SubmissionUpdate(BaseModel):
+    name: str
+
+
+@app.patch("/courses/{course_id}/assignments/{assign_id}")
+async def update_submission(course_id: int, assign_id: int, update: SubmissionUpdate):
+    if course_id not in ASSIGNMENTS:
+        raise HTTPException(status_code=404, detail="Course not found")
+
+    assignment = next(
+        (item for item in ASSIGNMENTS[course_id] if item["id"] == assign_id),
+        None,
+    )
+    if assignment is None:
+        raise HTTPException(status_code=404, detail="Assignment not found")
+
+    assignment["submitted"] = True
+    assignment["submission_name"] = update.name
+
+    return assignment
 
 
 if __name__ == "__main__":

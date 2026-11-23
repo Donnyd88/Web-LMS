@@ -23,7 +23,7 @@ function el(tag, text) {
   return node;
 }
 
-function openFilePicker(btn, submsn) {
+function submitAssignmentFromFile(btn, submsn, assign_id, course_id) {
   const input = document.createElement('input');
   input.type = 'file';
 
@@ -32,6 +32,16 @@ function openFilePicker(btn, submsn) {
     if (!file) return;
 
     try {
+      const response = await fetch(`http://localhost:8001/courses/${course_id}/assignments/${assign_id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name: file.name
+        })
+      });
+      if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
       submsn.textContent = file.name + "";
       if (btn.textContent === "Submit") {
           btn.before(submsn);
@@ -165,7 +175,7 @@ async function renderAssignments(panel) {
       btn.className = 'w-32 bg-blue-600 hover:bg-blue-700 text-white py-1 px-2 rounded';
     }
     btn.onclick = () => {
-      openFilePicker(btn, submsn);
+      submitAssignmentFromFile(btn, submsn, a.id, state.courseId);
     };
     panel.appendChild(btn);
     panel.appendChild(document.createElement("br"));
