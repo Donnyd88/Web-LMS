@@ -80,6 +80,7 @@ ASSIGNMENTS = {
             "due": _iso(2),
             "points": 50,
             "submitted": False,
+            "submission_name": ""
         },
         {
             "id": 102,
@@ -87,6 +88,7 @@ ASSIGNMENTS = {
             "due": _iso(-1),
             "points": 30,
             "submitted": True,
+            "submission_name": "prototype2.pdf"
         },
         {
             "id": 103,
@@ -94,6 +96,7 @@ ASSIGNMENTS = {
             "due": _iso(9),
             "points": 20,
             "submitted": False,
+            "submission_name": ""
         },
         {
             "id": 104,
@@ -101,6 +104,7 @@ ASSIGNMENTS = {
             "due": _iso(-5),
             "points": 10,
             "submitted": True,
+            "submission_name": "reading_response3.pdf"
         },
     ],
     2: [
@@ -110,6 +114,7 @@ ASSIGNMENTS = {
             "due": _iso(1),
             "points": 40,
             "submitted": False,
+            "submission_name": ""
         },
         {
             "id": 202,
@@ -117,6 +122,7 @@ ASSIGNMENTS = {
             "due": _iso(6),
             "points": 40,
             "submitted": False,
+            "submission_name": ""
         },
         {
             "id": 203,
@@ -124,6 +130,7 @@ ASSIGNMENTS = {
             "due": _iso(-3),
             "points": 15,
             "submitted": True,
+            "submission_name": "midterm_review.pdf"
         },
     ],
     3: [
@@ -133,6 +140,7 @@ ASSIGNMENTS = {
             "due": _iso(4),
             "points": 60,
             "submitted": False,
+            "submission_name": ""
         },
         {
             "id": 302,
@@ -140,6 +148,7 @@ ASSIGNMENTS = {
             "due": _iso(-2),
             "points": 10,
             "submitted": True,
+            "submission_name": "checklist.pdf"
         },
     ],
 }

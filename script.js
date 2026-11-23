@@ -23,7 +23,7 @@ function el(tag, text) {
   return node;
 }
 
-function openFilePicker(btn) {
+function openFilePicker(btn, submsn) {
   const input = document.createElement('input');
   input.type = 'file';
 
@@ -32,8 +32,10 @@ function openFilePicker(btn) {
     if (!file) return;
 
     try {
-      btn.before(file.name + " ");
-      btn.before(document.createElement("br"));
+      submsn.textContent = file.name + "";
+      if (btn.textContent === "Submit") {
+          btn.before(submsn);
+      }
       btn.textContent = "(submitted)";
       btn.className = 'w-32 bg-gray-200 hover:bg-gray-300 text-gray-800 py-1 px-2 rounded';
 
@@ -141,12 +143,20 @@ async function renderPanel() {
 async function renderAssignments(panel) {
   const assignments = await apiGet(`/courses/${state.courseId}/assignments`);
 
+  panel.appendChild(document.createElement("hr"));
+  panel.appendChild(document.createElement("hr"));
+
   for (const a of assignments) {
+    panel.appendChild(document.createElement("hr"));
     let label = `${a.title} - due ${a.due.slice(0, 10)} - ${a.points} pts`;
     panel.appendChild(el("div", label));
     const btn = document.createElement('button');
     btn.type = 'button';
+    
+    const submsn = document.createElement('p');
     if (a.submitted) {
+      submsn.textContent = a.submission_name + "";
+      panel.appendChild(submsn);
       btn.textContent = "(submitted)";
       btn.className = 'w-32 bg-gray-200 hover:bg-gray-300 text-gray-800 py-1 px-2 rounded';
     }
@@ -155,9 +165,11 @@ async function renderAssignments(panel) {
       btn.className = 'w-32 bg-blue-600 hover:bg-blue-700 text-white py-1 px-2 rounded';
     }
     btn.onclick = () => {
-      openFilePicker(btn);
+      openFilePicker(btn, submsn);
     };
     panel.appendChild(btn);
+    panel.appendChild(document.createElement("br"));
+    panel.appendChild(document.createElement("br"));
   }
 }
 
